@@ -48,6 +48,12 @@ public class BookingService {
             existingBooking.setAmount(booking.getAmount());
             existingBooking.setStatus(booking.getStatus());
 
+            // POD Details
+            existingBooking.setDeliveryDate(booking.getDeliveryDate());
+            existingBooking.setDeliveryTime(booking.getDeliveryTime());
+            existingBooking.setSignatureUrl(booking.getSignatureUrl());
+            existingBooking.setPodImageUrl(booking.getPodImageUrl());
+
             return bookingRepository.save(existingBooking);
         }
 

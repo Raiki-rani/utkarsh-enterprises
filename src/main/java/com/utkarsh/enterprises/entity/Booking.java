@@ -1,6 +1,8 @@
 package com.utkarsh.enterprises.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "bookings")
@@ -21,6 +23,12 @@ public class Booking {
     private Double weight;
     private Double amount;
     private String status;
+
+    // POD Fields
+    private LocalDate deliveryDate;
+    private LocalTime deliveryTime;
+    private String signatureUrl;
+    private String podImageUrl;
 
     public Booking() {
     }
@@ -65,12 +73,12 @@ public class Booking {
         this.receiverName = receiverName;
     }
 
-    public void setReceiverPhone(String receiverPhone) {
-        this.receiverPhone = receiverPhone;
-    }
-
     public String getReceiverPhone() {
         return receiverPhone;
+    }
+
+    public void setReceiverPhone(String receiverPhone) {
+        this.receiverPhone = receiverPhone;
     }
 
     public String getFromCity() {
@@ -119,5 +127,37 @@ public class Booking {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public LocalDate getDeliveryDate() {
+        return deliveryDate;
+    }
+
+    public void setDeliveryDate(LocalDate deliveryDate) {
+        this.deliveryDate = deliveryDate;
+    }
+
+    public LocalTime getDeliveryTime() {
+        return deliveryTime;
+    }
+
+    public void setDeliveryTime(LocalTime deliveryTime) {
+        this.deliveryTime = deliveryTime;
+    }
+
+    public String getSignatureUrl() {
+        return signatureUrl;
+    }
+
+    public void setSignatureUrl(String signatureUrl) {
+        this.signatureUrl = signatureUrl;
+    }
+
+    public String getPodImageUrl() {
+        return podImageUrl;
+    }
+
+    public void setPodImageUrl(String podImageUrl) {
+        this.podImageUrl = podImageUrl;
     }
 }
