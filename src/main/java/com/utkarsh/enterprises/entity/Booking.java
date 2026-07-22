@@ -3,6 +3,8 @@ package com.utkarsh.enterprises.entity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import jakarta.persistence.Column;
+import jakarta.persistence.Lob;
 
 @Entity
 @Table(name = "bookings")
@@ -27,7 +29,12 @@ public class Booking {
     // POD Fields
     private LocalDate deliveryDate;
     private LocalTime deliveryTime;
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String signatureUrl;
+
+    @Lob
+    @Column(columnDefinition = "LONGTEXT")
     private String podImageUrl;
 
     public Booking() {
